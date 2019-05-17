@@ -9,7 +9,7 @@ labels = ["Elon Musk"]
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 recognizer = cv2.createLBPHFaceRecognizer()
-recognizer.load("face-trainner.yml")
+recognizer.read("face-trainer.yml")
 
 cap = cv2.VideoCapture(0) #Get vidoe feed from the Camera
 

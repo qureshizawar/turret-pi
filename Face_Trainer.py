@@ -6,7 +6,7 @@ import os #To handle directories
 from PIL import Image #Pillow lib for handling images 
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-recognizer = cv2.createLBPHFaceRecognizer()
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 Face_ID = -1 
 pev_person_name = ""
@@ -42,4 +42,4 @@ for root, dirs, files in os.walk(Face_Images): #go to the face image directory
 				y_ID.append(Face_ID)
 
 recognizer.train(x_train, np.array(y_ID)) #Create a Matrix of Training data 
-recognizer.save("face-trainner.yml") #Save the matrix as YML file 
+recognizer.save("face-trainer.yml") #Save the matrix as YML file 
